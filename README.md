@@ -18,4 +18,8 @@ implemented by C++
 * search
 * hash
 * encryption
-* retrive
+* retrieve
+* regression
+* softmax
+* gradient
+
