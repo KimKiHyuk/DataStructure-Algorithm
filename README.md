@@ -23,3 +23,6 @@ implemented by C++
 * softmax
 * gradient
 
+
+### Test interface
+* implemented it using Strategy pattern.
