@@ -1,6 +1,13 @@
 # DataStructure-Algorithm
 implemented by C++
 
+## Test interface
+* implemented it using Strategy pattern.
+### How to add my features
+* add Test/TestCase/header/your_test.h
+* add Test/TestCase/your_test.cpp
+* append main.cpp -> add your test case in vector
+
 
 ## TO DO 
 ###  DataStructrue
@@ -22,7 +29,3 @@ implemented by C++
 * regression
 * softmax
 * gradient
-
-
-### Test interface
-* implemented it using Strategy pattern.
