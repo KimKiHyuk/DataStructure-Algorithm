@@ -15,8 +15,8 @@ int main(int argc, char* argv[]) {
 	
 	vector<ITest*> v;
 	vector<ITest*>::iterator iter;
-	
-	v.push_back(new StackTest());
+		
+	v.push_back(new StackTest<int>());
 	v.push_back(new QueueTest());
 	
 	for (iter = v.begin(); iter != v.end(); iter++)

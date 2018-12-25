@@ -3,12 +3,13 @@
 
 #include "../../TestStrategy/header/ITest.h"
 
+template <typename T>
 class StackTest: public ITest
 {
 
 public:
-	StackTest();
-	virtual ~StackTest();
+	StackTest(void);
+	virtual ~StackTest(void);
 	
 	virtual void Test();
 };
