@@ -2,12 +2,10 @@
 
 Context::Context()
 {
-	cout << "Context start" << endl;
 }
 
 Context::~Context()
 {
-	cout << "Context Disposed" << endl;
 }
 
 void Context::Test()

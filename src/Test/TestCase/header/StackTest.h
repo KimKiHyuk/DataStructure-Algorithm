@@ -3,7 +3,6 @@
 
 #include "../../TestStrategy/header/ITest.h"
 
-template <typename T>
 class StackTest: public ITest
 {
 
@@ -12,6 +11,11 @@ public:
 	virtual ~StackTest(void);
 	
 	virtual void Test();
+private:
+	void Test_stack_overflow();
+	void Test_push();
+	void Test_pop();
+	void Test_pop_when_stack_is_empty();
 };
 
 #endif
