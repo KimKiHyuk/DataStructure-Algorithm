@@ -7,6 +7,7 @@ Stack<T>::Stack()
 template <typename T>
 Stack<T>::~Stack()
 {
+	Clear(0, true);
 	cout << "Stack end" << endl;
 }
 
