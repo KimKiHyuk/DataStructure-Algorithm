@@ -15,18 +15,19 @@ StackTest::StackTest(void)
 StackTest::~StackTest()
 {
 	cout << "Stack Test Disposed" << endl;
+	delete stack;
+	
 }
 
 void StackTest::Test()
 {
-	cout << "Stack Test" << endl;
+	cout << "========= Stack Test ==========" << endl;	
 	
 	stack = new Stack<int>();
 	
-	Test_stack_overflow();
 	Test_push();
 	Test_pop();
-	Test_push();
+	Test_stack_overflow();
 	Test_pop_when_stack_is_empty();
 
 }
@@ -39,14 +40,7 @@ void StackTest::Test_stack_overflow()
 		{
 			cout << "[StackTest] Test_stack_overflow Passed" << endl;
 		}
-	}
-	
-	for (int i = 0; i < MAX_STACK; i++)
-	{
-		stack->Clear(i, false);
-	}
-	
-	
+	}	
 }
 
 void StackTest::Test_push()

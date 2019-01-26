@@ -8,9 +8,9 @@ class StackTest: public ITest
 
 public:
 	StackTest(void);
-	virtual ~StackTest(void);
-	
+	virtual ~StackTest(void);	
 	virtual void Test();
+	
 private:
 	void Test_stack_overflow();
 	void Test_push();
