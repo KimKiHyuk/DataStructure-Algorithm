@@ -22,6 +22,17 @@ int main(int argc, char* argv[]) {
 	
 	for (iter = v.begin(); iter != v.end(); iter++)
 	{
+		/* another way of testing
+		
+		ITest* test = *iter;
+		test->Test();
+		
+		OR
+		
+		(*iter)->Test();
+		 
+		*/
+		
 		cxt->setTest(*iter);
 		cxt->Test();
 		
