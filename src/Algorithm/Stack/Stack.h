@@ -14,11 +14,10 @@ class Stack
 public:
 	Stack();
 	virtual ~Stack();
-	
+
 	bool Push(T value);
 	T Peek();
 	T Pop();
-	void Clear(unsigned int index, bool all_clear);
 	
 	
 private:
