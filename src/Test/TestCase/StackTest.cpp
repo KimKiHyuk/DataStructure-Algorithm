@@ -73,7 +73,7 @@ void StackTest::Test_pop()
 }
 void StackTest::Test_pop_when_stack_is_empty()
 {
-	for (int i = MAX_STACK; i > 0; i--)
+	for (int i = MAX_STACK; i >= 0; i--)
 	{
 		if (stack->Pop() == '\0')
 		{
