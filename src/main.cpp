@@ -4,6 +4,7 @@
 #include "Test/TestStrategy/header/ITest.h"
 #include "Test/TestCase/header/StackTest.h"
 #include "Test/TestCase/header/QueueTest.h"
+#include "Test/TestCase/header/DFSTest.h"
 
 #include <vector>
 
@@ -16,8 +17,9 @@ int main(int argc, char* argv[]) {
 	vector<ITest*> v;
 	vector<ITest*>::iterator iter;
 		
-	v.push_back(new QueueTest());
-	v.push_back(new StackTest());
+	// v.push_back(new QueueTest());
+	// v.push_back(new StackTest());
+	v.push_back(new DFSTest());
 
 	
 	for (iter = v.begin(); iter != v.end(); iter++)
