@@ -33,6 +33,7 @@ void DFSTest::Test()
 	
 	dfs.PrintMap (graph);
 	
-	dfs.DFS_Stack(graph);
-	dfs.DFS_Rec(graph);
+	dfs.DFS_Rec(0, 0, graph);
+	
+	dfs.PrintMap (graph);
 }

@@ -16,7 +16,7 @@ class DFS
 		virtual ~DFS();
 	
 		void DFS_Stack (vector< vector<T> > &graph);
-		void DFS_Rec (vector< vector<T> > &graph);
+		void DFS_Rec (int x, int y, vector< vector<T> > &graph);
 		void PrintMap (vector< vector<T> > &graph);
 	private:
 		int x;
