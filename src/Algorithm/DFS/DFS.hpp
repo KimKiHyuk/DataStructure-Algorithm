@@ -1,12 +1,11 @@
 template <typename T>
-DFS<T>::DFS(int x, int y)
+DFS<T>::DFS(T start)
 {
-	this->x = x;
-	this->y = y;
+	this->start = start;
 	
-	this->isVisited = new bool[this->x  *  this->y];
+	this->isVisited = new bool[100];
 	
-	fill(this->isVisited, this->isVisited + this->x * this->y, false);
+	fill(this->isVisited, this->isVisited + 100, false);
 	
 	cout << "DFS Start"	<< endl;
 }
@@ -20,55 +19,41 @@ DFS<T>::~DFS()
 }
 
 template <typename T>
-void DFS<T>::DFS_Stack (vector< vector<T> > &graph)
+void DFS<T>::DFS_Stack (vector< pair<T, T> > *graph)
 {
-	for (int y = 0; y < this->y; y++)
+	for (int i = 0; i < MAX_NODE; i++)
 	{
-		for (int x = 0; x < this->x; x++)
+		if (!graph[i].empty())
 		{
+			cout << i << " vector is avaliable" << endl; 
 		}
+
 	}
 }
 
 template <typename T>
-void DFS<T>::DFS_Rec (int x, int y, vector< vector<T> > &graph)
+void DFS<T>::DFS_Rec (vector< pair<T, T> > *graph)
 {
-	
-	isVisited[y * 10 + x] = true;
-	
-	if (y < this->y - 1)
+		for (int i = 0; i < MAX_NODE; i++)
 	{
-		DFS_Rec(x, y + 1, graph);
-	}
-	
-	if (x < this->x - 1)
-	{
-		DFS_Rec(x + 1, y, graph);
+		if (!graph[i].empty())
+		{
+			cout << i << " vector is avaliable" << endl; 
+		}
+
 	}
 }
 
 template <typename T>
-void DFS<T>::PrintMap (vector< vector<T> > &graph)
+void DFS<T>::PrintMap (vector< pair<T, T> > graph[MAX_NODE])
 {
-	
-	for (int y = 0; y < this->y; y++)
+	for (int i = 0; i < MAX_NODE; i++)
 	{
-		cout << "↓ ";
-		for (int x = 0; x < this->x; x++)
+		if (!graph[i].empty())
 		{
-			if (this->isVisited[y * 10 + x])
-			{	
-				cout << " \033[1;31m[ " << graph[y][x] << " ] " << "\033[0m" << "-> ";		
-			}
-			else
-			{
-				cout << " [ " << graph[y][x] <<  " ] -> ";
-			}
-			
+			cout << i << " vector is avaliable" << endl; 
 		}
-		
-		cout << endl;
+
 	}
-	
-	cout << "\n" << endl;
+	// cout << " \033[1;31m[ " << graph[y][x] << " ] " << "\033[0m" << "-> ";		
 }
