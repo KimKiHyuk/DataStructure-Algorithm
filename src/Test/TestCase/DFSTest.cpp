@@ -13,27 +13,15 @@ DFSTest::~DFSTest()
 }
 void DFSTest::Test()
 {
-	DFS<int> dfs(SIZE_OF_TEST_MAP, SIZE_OF_TEST_MAP);
-	vector< vector<int> > graph;
-	graph.resize(SIZE_OF_TEST_MAP);
+	DFS<int> dfs(1);
+	vector< pair<int, int> > graph[MAX_NODE];
 	
-	for (int y = 0; y < SIZE_OF_TEST_MAP; y++)
-	{
-		// for 2 dimensional vector initalize
-		// graph.push_back(vector<int>());
-		
-		// or you can use resize method above
-		
-			
-		for (int x = 0; x < SIZE_OF_TEST_MAP; x++)
-		{
-			graph[y].push_back(rand() % 500 + 100);
-		}
-	}
+	graph[1].push_back(make_pair(2, 4));
+	graph[1].push_back(make_pair(2, 3));
+	graph[2].push_back(make_pair(3, 1));
 	
-	dfs.PrintMap (graph);
-	
-	dfs.DFS_Rec(0, 0, graph);
-	
-	dfs.PrintMap (graph);
+
+	dfs.DFS_Stack(graph);
+	dfs.DFS_Rec(graph);
+	dfs.PrintMap(graph);
 }
