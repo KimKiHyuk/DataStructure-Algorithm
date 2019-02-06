@@ -3,9 +3,9 @@ DFS<T>::DFS(T start)
 {
 	this->start = start;
 	
-	this->isVisited = new bool[100];
+	this->isVisited = new bool[VISIT_SIZE];
 	
-	fill(this->isVisited, this->isVisited + 100, false);
+	fill(this->isVisited, this->isVisited + VISIT_SIZE, false);
 	
 	cout << "DFS Start"	<< endl;
 }
@@ -21,7 +21,27 @@ DFS<T>::~DFS()
 template <typename T>
 void DFS<T>::DFS_Stack (vector< pair<T, T> > *graph)
 {
-	cout << graph[1][1].first << endl;
+	stack<T> nodes;
+	nodes.push(this->start);
+	
+	while(!nodes.empty())
+	{
+		T currentNode = nodes.top();
+		nodes.pop();
+		if (!isVisited[currentNode])
+		{
+			isVisited[currentNode] = true;
+			cout << " [ " << currentNode << " ]";
+		}
+		
+		for (int i = graph[currentNode].size() - 1; i >= 0 ; i--)
+		{
+			nodes.push(graph[currentNode][i].first);
+		}
+	}
+	
+	fill (isVisited, isVisited + VISIT_SIZE, false);
+	cout << endl;
 }
 
 template <typename T>
