@@ -7,6 +7,7 @@
 #include <stack>
 
 #define MAX_NODE 100
+#define VISIT_SIZE 1000
 
 using namespace std;
 
