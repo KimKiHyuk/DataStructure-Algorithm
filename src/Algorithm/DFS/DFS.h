@@ -18,7 +18,7 @@ class DFS
 		virtual ~DFS();
 	
 		void DFS_Stack (vector< pair<T, T> > *graph);
-		void DFS_Rec (vector< pair<T, T> > *graph);
+		void DFS_Rec (vector< pair<T, T> > *graph, T currentNode);
 		void PrintMap (vector< pair<T, T> > graph[MAX_NODE]);
 	private:
 		T start;
