@@ -18,9 +18,8 @@ class DFS
 		DFS(T start);
 		virtual ~DFS();
 	
-		void DFS_Stack (vector< pair<T, T> > *graph);
-		void DFS_Rec (vector< pair<T, T> > *graph, T currentNode);
-		void PrintMap (vector< pair<T, T> > graph[MAX_NODE]);
+		void DFS_Stack (vector< pair<int, T> > *graph);
+		void DFS_Rec (vector< pair<int, T> > *graph, T currentNode);
 	private:
 		T start;
 		bool * isVisited;

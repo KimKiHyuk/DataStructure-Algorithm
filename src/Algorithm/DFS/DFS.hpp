@@ -19,7 +19,7 @@ DFS<T>::~DFS()
 }
 
 template <typename T>
-void DFS<T>::DFS_Stack (vector< pair<T, T> > *graph)
+void DFS<T>::DFS_Stack (vector< pair<int, T> > *graph)
 {
 	stack<T> nodes;
 	nodes.push(this->start);
@@ -45,7 +45,7 @@ void DFS<T>::DFS_Stack (vector< pair<T, T> > *graph)
 }
 
 template <typename T>
-void DFS<T>::DFS_Rec (vector< pair<T, T> > *graph, T currentNode)
+void DFS<T>::DFS_Rec (vector< pair<int, T> > *graph, T currentNode)
 {	
 	if (!isVisited[currentNode])
 	{
@@ -60,9 +60,4 @@ void DFS<T>::DFS_Rec (vector< pair<T, T> > *graph, T currentNode)
 			DFS_Rec(graph, graph[currentNode][i].first);
 		}
 	}
-}
-
-template <typename T>
-void DFS<T>::PrintMap (vector< pair<T, T> > graph[MAX_NODE])
-{
 }

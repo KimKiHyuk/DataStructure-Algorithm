@@ -18,7 +18,7 @@ class BFS
 		BFS(T start);
 		virtual ~BFS();
 	
-		void BFS_Queue (vector< pair<T, T> > *graph);
+		void BFS_Queue (vector< pair<int, T> > *graph);
 	private:
 		T start;
 		bool * isVisited;

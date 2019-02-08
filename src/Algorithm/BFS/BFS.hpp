@@ -15,7 +15,7 @@ BFS<T>::~BFS()
 	delete[] isVisited;
 }
 template <typename T>
-void BFS<T>::BFS_Queue(vector< pair<T, T> > *graph)
+void BFS<T>::BFS_Queue(vector< pair<int, T> > *graph)
 {
 	bfsQueue.push(this->start);
 	
