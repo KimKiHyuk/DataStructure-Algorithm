@@ -18,8 +18,8 @@ int main(int argc, char* argv[]) {
 		
 	v.push_back(new QueueTest());
 	v.push_back(new StackTest());
-	// v.push_back(new DFSTest());
-	// v.push_back(new BFSTest());
+	v.push_back(new DFSTest());
+	v.push_back(new BFSTest());
 
 	
 	for (iter = v.begin(); iter != v.end(); iter++)

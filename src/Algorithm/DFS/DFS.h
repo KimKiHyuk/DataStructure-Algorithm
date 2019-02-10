@@ -9,24 +9,26 @@
 #define MAX_NODE 100
 #define VISIT_SIZE 1000
 
-using namespace std;
-
-template <typename T> 
-class DFS
+namespace key_al
 {
-	public:
+	template <typename T> 
+	class DFS
+	{
+		public:
 		DFS(T start);
 		virtual ~DFS();
 	
-		void DFS_Stack (vector< pair<int, T> > *graph);
-		void DFS_Rec (vector< pair<int, T> > *graph, T currentNode);
+		void DFS_Stack (std::vector< std::pair<int, T> > *graph);
+		void DFS_Rec (std::vector< std::pair<int, T> > *graph, T currentNode);
 	private:
 		T start;
 		bool * isVisited;
-		stack<T> dfsStack;
+		std::stack<T> dfsStack;
 	
-};
+	};
 
-#include "DFS.hpp"
+	#include "DFS.hpp"
+}
+
 
 #endif

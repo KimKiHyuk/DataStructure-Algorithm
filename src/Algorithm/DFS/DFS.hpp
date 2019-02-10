@@ -5,23 +5,19 @@ DFS<T>::DFS(T start)
 	
 	this->isVisited = new bool[VISIT_SIZE];
 	
-	fill(this->isVisited, this->isVisited + VISIT_SIZE, false);
-	
-	cout << "DFS Start"	<< endl;
+	std::fill(this->isVisited, this->isVisited + VISIT_SIZE, false);
 }
 
 template <typename T>
 DFS<T>::~DFS()
 {
 	delete[] isVisited;
-	
-	cout << "\nDFS End" << endl;
 }
 
 template <typename T>
-void DFS<T>::DFS_Stack (vector< pair<int, T> > *graph)
+void DFS<T>::DFS_Stack (std::vector< std::pair<int, T> > *graph)
 {
-	stack<T> nodes;
+	std::stack<T> nodes;
 	nodes.push(this->start);
 	
 	while(!nodes.empty())
@@ -31,7 +27,7 @@ void DFS<T>::DFS_Stack (vector< pair<int, T> > *graph)
 		if (!isVisited[currentNode])
 		{
 			isVisited[currentNode] = true;
-			cout << " [ " << currentNode << " ]";
+			std::cout << " [ " << currentNode << " ]";
 		}
 		
 		for (int i = graph[currentNode].size() - 1; i >= 0 ; i--)
@@ -40,17 +36,17 @@ void DFS<T>::DFS_Stack (vector< pair<int, T> > *graph)
 		}
 	}
 	
-	fill (isVisited, isVisited + VISIT_SIZE, false);
-	cout << endl;
+	std::fill (isVisited, isVisited + VISIT_SIZE, false);
+	std::cout << std::endl;
 }
 
 template <typename T>
-void DFS<T>::DFS_Rec (vector< pair<int, T> > *graph, T currentNode)
+void DFS<T>::DFS_Rec (std::vector< std::pair<int, T> > *graph, T currentNode)
 {	
 	if (!isVisited[currentNode])
 	{
 		isVisited[currentNode] = true;
-		cout << " [ " << currentNode << " ]";
+		std::cout << " [ " << currentNode << " ]";
 	}
 	
 	if (!graph[currentNode].empty())
