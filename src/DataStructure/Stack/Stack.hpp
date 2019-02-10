@@ -7,7 +7,6 @@ Stack<T>::Stack()
 template <typename T>
 Stack<T>::~Stack()
 {
-	cout << "Stack end" << endl;
 	delete[] data;
 
 }

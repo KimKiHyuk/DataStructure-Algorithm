@@ -10,5 +10,5 @@ ITest::~ITest()
 
 void ITest::Test()
 {
-	cout << "ITest called" << endl;
+	std::cout << "ITest called" << std::endl;
 }

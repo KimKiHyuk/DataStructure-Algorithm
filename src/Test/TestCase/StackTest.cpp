@@ -1,29 +1,27 @@
 #include <iostream>
 #include <cstdlib>
 #include "header/StackTest.h"
-#include "../../Algorithm/Stack/Stack.h"
+#include "../../DataStructure/Stack/Stack.h"
 
-using namespace std;
-
-Stack<int>* stack;
+key_ds::Stack<int>* stack;
 
 StackTest::StackTest(void)
 {
-	cout << "Stack Test Start" << endl;
+	std::cout << "Stack Test Initalized" << std::endl;
 }
 
 StackTest::~StackTest()
 {
-	cout << "Stack Test Disposed" << endl;
+	std::cout << "Stack Test Disposed" << std::endl;
 	delete stack;
 	
 }
 
 void StackTest::Test()
 {
-	cout << "========= Stack Test ==========" << endl;	
+	std::cout << "========= Stack Test ==========" << std::endl;	
 	
-	stack = new Stack<int>();
+	stack = new key_ds::Stack<int>();
 	
 	Test_push();
 	Test_pop();
@@ -38,7 +36,7 @@ void StackTest::Test_stack_overflow()
 	{
 		if (!stack->Push((rand() % 100) + 1))
 		{
-			cout << "[StackTest] Test_stack_overflow Passed" << endl;
+			std::cout << "[StackTest] Test_stack_overflow Passed" << std::endl;
 		}
 	}	
 }
@@ -47,11 +45,11 @@ void StackTest::Test_push()
 {	
 	if (stack->Push(10))
 	{
-		cout << "[StackTest] Test_push Passed" << endl;
+		std::cout << "[StackTest] Test_push Passed" << std::endl;
 	}
 	else
 	{
-		cout << "[StackTest] Test_push Failed" << endl;
+		std::cout << "[StackTest] Test_push Failed" << std::endl;
 	}
 }
 void StackTest::Test_pop()
@@ -60,15 +58,15 @@ void StackTest::Test_pop()
 	
 	if (data == '\0')
 	{
-		cout << "[StackTest] Test_pop Failed" << endl;
+		std::cout << "[StackTest] Test_pop Failed" << std::endl;
 	}
 	else if (stack->Pop() == data)
 	{
-		cout << "[StackTest] Test_pop Passed" << endl;
+		std::cout << "[StackTest] Test_pop Passed" << std::endl;
 	}
 	else
 	{
-		cout << "[StackTest] Test_pop Failed" << endl;
+		std::cout << "[StackTest] Test_pop Failed" << std::endl;
 	}
 }
 void StackTest::Test_pop_when_stack_is_empty()
@@ -77,11 +75,11 @@ void StackTest::Test_pop_when_stack_is_empty()
 	{
 		if (stack->Pop() == '\0')
 		{
-			cout << "[StackTest] Test_pop_when_stack_is_empty Passed" << endl;
+			std::cout << "[StackTest] Test_pop_when_stack_is_empty Passed" << std::endl;
 	
 			return;
 		}
 	}
-	cout << "[StackTest] Test_pop_when_stack_is_empty Failed" << endl;
+	std::cout << "[StackTest] Test_pop_when_stack_is_empty Failed" << std::endl;
 }
 

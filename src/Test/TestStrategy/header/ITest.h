@@ -1,8 +1,7 @@
 #ifndef __ITEST_H__
 #define __ITEST_H__
-#include <iostream>
 
-using namespace std;
+#include <iostream>
 
 class ITest
 {
