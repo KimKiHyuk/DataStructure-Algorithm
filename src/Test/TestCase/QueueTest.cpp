@@ -1,7 +1,6 @@
 #include <iostream>
 #include "header/QueueTest.h"
 #include "../../DataStructure/Queue/Queue.h"
-#include "header/QueueTest.h"
 
 key_ds::Queue<int>* queue;
 

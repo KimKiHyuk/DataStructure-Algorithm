@@ -1,21 +1,19 @@
 template <typename T>
 BFS<T>::BFS(T start)
 {
-	cout << "BFS start" << endl;
 	this->start = start;
 	this->isVisited = new bool[VISIT_SIZE];
 	
-	fill(isVisited, isVisited + VISIT_SIZE, false);
+	std::fill(isVisited, isVisited + VISIT_SIZE, false);
 	
 }
 template <typename T>
 BFS<T>::~BFS()
 {
-	cout << "BFS end" << endl;
 	delete[] isVisited;
 }
 template <typename T>
-void BFS<T>::BFS_Queue(vector< pair<int, T> > *graph)
+void BFS<T>::BFS_Queue(std::vector< std::pair<int, T> > *graph)
 {
 	bfsQueue.push(this->start);
 	
@@ -27,7 +25,7 @@ void BFS<T>::BFS_Queue(vector< pair<int, T> > *graph)
 		if (!isVisited[current])
 		{
 			isVisited[current] = true;
-			cout << " [ " << current << " ]";
+			std::cout << " [ " << current << " ]";
 		}
 		
 		for (int i = 0; i < graph[current].size(); i++)
@@ -37,5 +35,5 @@ void BFS<T>::BFS_Queue(vector< pair<int, T> > *graph)
 		}
 	}
 	
-	cout << endl;
+	std::cout << std::endl;
 }
