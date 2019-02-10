@@ -7,7 +7,6 @@ Queue<T>::Queue()
 template <typename T>
 Queue<T>::~Queue()
 {
-	cout << "Queue end" << endl;
 	delete[] data;
 }
 
