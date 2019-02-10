@@ -21,6 +21,8 @@ implemented by C++
 
 
 ### Algorithm
+* BFS
+* DFS
 * sort
 * search
 * hash
