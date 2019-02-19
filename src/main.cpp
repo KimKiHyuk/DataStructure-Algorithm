@@ -6,6 +6,7 @@
 #include "Test/TestCase/header/QueueTest.h"
 #include "Test/TestCase/header/DFSTest.h"
 #include "Test/TestCase/header/BFSTest.h"
+#include "Test/TestCase/header/HashTest.h"
 
 #include <vector>
 
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
 	v.push_back(new StackTest());
 	v.push_back(new DFSTest());
 	v.push_back(new BFSTest());
+	v.push_back(new HashTest());
 
 	
 	for (iter = v.begin(); iter != v.end(); iter++)
