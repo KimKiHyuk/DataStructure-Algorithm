@@ -13,12 +13,22 @@ namespace key_ds
 		int key;
 		char data;
 		
+		HashSet()
+		{
+			key = -1;
+			data = -1;
+		}
 	}HashSet;
 	
 	typedef struct Node
 	{
-		int count = 0;
+		int count;
 		std::list<HashSet*> chain;
+		
+		Node()
+		{
+			count = 0;
+		}
 	}Node;
 	
 	class Hash
@@ -26,7 +36,7 @@ namespace key_ds
 		public:
 			Hash(unsigned int size);
 			virtual ~Hash();
-			void hash_search(int key);
+			HashSet hash_search(int key);
 			void hash_insert(HashSet* data);
 			void hash_delete(int key);
 			void print_all();

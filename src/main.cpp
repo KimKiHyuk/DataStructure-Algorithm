@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Test/TestStrategy/header/Context.h"
 #include "Test/TestStrategy/header/ITest.h"
 #include "Test/TestCase/header/StackTest.h"
@@ -16,7 +15,7 @@ int main(int argc, char* argv[]) {
 	
 	std::vector<ITest*> v;
 	std::vector<ITest*>::iterator iter;
-		
+	
 	v.push_back(new QueueTest());
 	v.push_back(new StackTest());
 	v.push_back(new DFSTest());
@@ -44,10 +43,7 @@ int main(int argc, char* argv[]) {
 	}
 	
 	delete cxt;
-	
-	
-
-	
+		
 	return 0;
 }
 
