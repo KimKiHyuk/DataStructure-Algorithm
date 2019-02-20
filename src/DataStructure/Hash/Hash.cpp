@@ -22,11 +22,22 @@ void key_ds::Hash::hash_insert(key_ds::HashSet* data)
 	this->hashTable[key].chain.push_back(data);
 	this->hashTable[key].count += 1;
 }
-
-key_ds::HashSet key_ds::Hash::hash_search(int key)
+bool key_ds::Hash::hash_delete(int key)
 {
-	key_ds::HashSet result;
+	int _key = this->get_hash_key(key); // for table(0~9)
+	auto result = hash_search(key); // for my key(50)
 	
+	if ((*result)->key == -1)
+	{
+		return false;
+	}
+	
+	this->hashTable[_key].chain.erase(result);
+	return true;
+}
+
+std::list<key_ds::HashSet*>::iterator key_ds::Hash::hash_search(int key)
+{	
 	std::list<key_ds::HashSet*>::iterator iter;
 	int _key = key_ds::Hash::get_hash_key(key);
 	
@@ -36,12 +47,16 @@ key_ds::HashSet key_ds::Hash::hash_search(int key)
 		{
 			if ((*iter)->key == key)
 			{
-				result = *(*iter);
+				return iter;
 			}
 		}
 	}
+
+	key_ds::HashSet empty;
+	std::list<HashSet*> fail(1, &empty);
+	iter = fail.begin();
 	
-	return result;
+	return iter;
 }
 
 int key_ds::Hash::get_hash_key(int key)
