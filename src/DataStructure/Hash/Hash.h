@@ -36,9 +36,9 @@ namespace key_ds
 		public:
 			Hash(unsigned int size);
 			virtual ~Hash();
-			HashSet hash_search(int key);
+			std::list<key_ds::HashSet*>::iterator 						hash_search(int key);
 			void hash_insert(HashSet* data);
-			void hash_delete(int key);
+			bool hash_delete(int key);
 			void print_all();
 			int get_hash_key(int key);
 		private:
