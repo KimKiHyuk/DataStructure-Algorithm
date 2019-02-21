@@ -15,6 +15,12 @@ key_ds::Hash::~Hash()
 	
 	delete[] this->hashTable;
 }
+
+std::list<key_ds::HashSet*>::iterator
+key_ds::Hash::get_EOiterator(int key)
+{
+	return this->hashTable[this->get_hash_key(key)].chain.end();
+}
 void key_ds::Hash::hash_insert(key_ds::HashSet* data)
 {
 	int key = this->get_hash_key(data->key);
@@ -27,10 +33,12 @@ bool key_ds::Hash::hash_delete(int key)
 	int _key = this->get_hash_key(key); // for table(0~9)
 	auto result = hash_search(key); // for my key(50)
 	
-	if ((*result)->key == -1)
+	
+	if (result == this->get_EOiterator(key))
 	{
 		return false;
 	}
+	
 	
 	this->hashTable[_key].chain.erase(result);
 	return true;
@@ -51,12 +59,8 @@ std::list<key_ds::HashSet*>::iterator key_ds::Hash::hash_search(int key)
 			}
 		}
 	}
-
-	key_ds::HashSet empty;
-	std::list<HashSet*> fail(1, &empty);
-	iter = fail.begin();
 	
-	return iter;
+	return this->hashTable[_key].chain.end();
 }
 
 int key_ds::Hash::get_hash_key(int key)

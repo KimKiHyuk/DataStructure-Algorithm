@@ -41,6 +41,9 @@ namespace key_ds
 			bool hash_delete(int key);
 			void print_all();
 			int get_hash_key(int key);
+		
+			std::list<key_ds::HashSet*>::iterator 
+			get_EOiterator(int key);
 		private:
 			unsigned int size;
 			Node* hashTable;
