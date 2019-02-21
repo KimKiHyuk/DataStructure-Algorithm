@@ -21,7 +21,7 @@ void SearchTest(key_ds::Hash* h, int key)
 {
 	auto x = h->hash_search(key);
 	
-	if ((*x)->key != -1)
+	if (x != h->get_EOiterator(key))
 		std::cout << "found key : " << (*x)->key << " | found data : " << (*x)->data << std::endl;
 	else
 	{
