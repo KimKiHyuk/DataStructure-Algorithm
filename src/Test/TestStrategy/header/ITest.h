@@ -2,6 +2,7 @@
 #define __ITEST_H__
 
 #include <iostream>
+#include "../../../Helper/IOHelper/io_helper.h"
 
 class ITest
 {
