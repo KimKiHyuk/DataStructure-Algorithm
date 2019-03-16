@@ -2,7 +2,8 @@
 #define __ITEST_H__
 
 #include <iostream>
-#include "../../../Helper/IOHelper/io_helper.h"
+
+#define PRINT_TEST_NAME (std::cout << __func__ << " : ")
 
 class ITest
 {

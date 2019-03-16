@@ -13,11 +13,4 @@ LRUTest::~LRUTest()
 
 void LRUTest::Test()
 {
-	key_al::LRU* a = new key_al::LRU();	
-	std::cout << "LRUTest" << std::endl;
-	
-	io_helper* helper = new io_helper();
-	
-	delete a;
-	delete helper;
 }
