@@ -23,6 +23,7 @@ std::string io_helper::read_txt_file()
 		{
 			_input_stream.getline(_place_holder, 4096);
 			input_str.append(_place_holder);
+			input_str.append("\n");
 		}
 	}
 

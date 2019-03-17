@@ -35,15 +35,19 @@ bool write_file_text()
 }
 
 
-void FileHelperTest::Test()
+void FileHelperTest::Test() // Test(method1, method2..) 이런식으로 해서 abstract 하면 코드 줄 듯.
 {
+	/*
 	typedef bool (*tests)();
 	tests funcs[] = {read_file_text, write_file_text};
+	*/
 	
-	for(int i = 0; i < sizeof(funcs)/ sizeof(tests); i++)
+	// OR
+	
+	bool (*funcs[])() = {read_file_text, write_file_text};
+	
+	for(auto test : funcs)
 	{
-		std::cout << (funcs[i]() ? "true" : "false") << std::endl;
-	}
-
-	
+		std::cout << (test() ? "true" : "false") << std::endl;
+	}	
 }

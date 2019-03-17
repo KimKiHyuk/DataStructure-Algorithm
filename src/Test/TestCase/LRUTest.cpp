@@ -13,4 +13,5 @@ LRUTest::~LRUTest()
 
 void LRUTest::Test()
 {
+	key_al::LRU lru;
 }
