@@ -2,25 +2,12 @@
 
 key_al::LRU::LRU()
 {
-	io_helper file("/workspace/fucking-cplusplus/src/Algorithm/LRU/input.txt");
-
 	unsigned int trial = 0;
-	std::string element;
-	std::stringstream stream;
-	stream.str(file.read_txt_file());
 	
-	
-	while (stream >> this->_cache_size >> this->_op)
+	while (this->check_data())
 	{
-		this->_cache_list.clear();
-		if (!this->check_data())
-		{
-			std::cout << "invaild data!" << std::endl;
-			continue;
-		}
-		
 		// everything's ok, let's start
-
+		this->_cache_list.clear();
 		std::cout << "Simulation " << ++trial << std::endl;
 		this->task();
 	}
@@ -34,25 +21,30 @@ key_al::LRU::~LRU()
 
 bool key_al::LRU::check_data()
 {
+	std::string s;
+	std::getline(std::cin, s);
+	std::stringstream stream;
+	stream.str(s);
 	
+	stream >> this->_cache_size;
 	if (!(this->_cache_size >= 1 && this->_cache_size <= 26))
 	{
 		return false;
-	}
+	}		
 	
+	stream >> this->_op;
 	for (auto s : this->_op)
 	{
 		if (s == '!')
 		{
 			continue;
 		}
-		
 		if (!std::isupper(s))
 		{
 			return false;
 		}
 	}
-	
+
 	return true;
 }
 
