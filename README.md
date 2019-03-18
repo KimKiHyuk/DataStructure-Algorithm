@@ -3,6 +3,7 @@
 
 ## Problem set 
 * https://www.geeksforgeeks.org/
+* https://www.acmicpc.net/
 
 ## Test interface
 * implemented it using Strategy pattern.
@@ -26,6 +27,7 @@
 ### Algorithm
 * BFS
 * DFS
+* cache
 * sort
 * search
 * hash
