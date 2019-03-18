@@ -8,6 +8,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <typeinfo>
 
 typedef std::list<char> cache;
 namespace key_al
@@ -17,15 +18,16 @@ namespace key_al
 		public:
 			LRU();
 			virtual ~LRU();
-			void set_recent_node(char data);
+			void task();
+			void set_lru_when_hit(cache::const_iterator const_iter);
+			void set_lru_when_full(char value);
 			void print_current();
 			bool check_data();
 		
 		private:
-			cache _cache_list; 
+			std::list<char> _cache_list; 
 			unsigned int _cache_size;
 			std::string _op;
-			std::vector< std::pair<unsigned int, std::string> > _place_holder;
 	};
 }
 
